@@ -10,7 +10,6 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    # Эта магия установит Pandas сама при запуске!
     _PIP_ADDITIONAL_PACKAGES: "pandas apache-airflow-providers-mongodb pymongo"
   volumes:
     - ./dags:/opt/airflow/dags
@@ -67,7 +66,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
 
-  # Удобная веб-морда для Монги (как Compass, но в браузере)
   mongo-express:
     image: mongo-express
     ports:
